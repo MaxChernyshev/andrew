@@ -1,0 +1,8 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/js/front/js/app.js": "/js/front/js/app.js",
+    "/js/admin/js/adminlte.js": "/js/admin/js/adminlte.js",
+    "/css/front/css/app.css": "/css/front/css/app.css",
+    "/css/app.css": "/css/app.css",
+    "/css/admin/css/adminlte.css": "/css/admin/css/adminlte.css"
+}

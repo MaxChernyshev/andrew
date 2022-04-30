@@ -1,0 +1,25 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Marmelad');
+
+// Variables
+@import '_variables';
+
+// Bootstrap
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
+
+body {
+    background: #F7F5FB;
+}
+
+header {
+    background: #989b9e;
+
+    .top-header {
+        background: #ffffff;
+    }
+}
+
+footer {
+    background: #989b9e;
+}
