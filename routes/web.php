@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\MainController;
 use App\Http\Controllers\Admin\AdminPanelController;
 use App\Http\Controllers\Front\ContactController;
+use App\Http\Controllers\Front\ThemeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ require __DIR__ . '/auth.php';
 
 Route::localizedGroup(function () {
     Route::get('/', [MainController::class, 'index'])->name('main.page');
+    Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
 
     Route::prefix('/contact')->name('contact.')->group(function () {
         Route::get('/', [ContactController::class, 'index'])->name('index');
