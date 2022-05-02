@@ -2,14 +2,13 @@
 
 namespace App\Models;
 
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 
-
-class Theme extends Model implements TranslatableContract
+class Question extends Model  implements TranslatableContract
 {
     use HasFactory;
     use Translatable;
@@ -25,15 +24,17 @@ class Theme extends Model implements TranslatableContract
     }
 
 
-    public $translatedAttributes = ['title', 'content'];
+    public $translatedAttributes = ['title', 'content', 'answer'];
 
     protected $fillable = [
+        'theme_id',
         'active',
         'slug',
         'image',
     ];
 
-    public function questions(){
-        return $this->hasMany(Question::class);
+    public function theme(){
+        return $this->belongsTo(Theme::class);
     }
+
 }

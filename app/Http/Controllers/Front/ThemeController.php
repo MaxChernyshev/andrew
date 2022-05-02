@@ -15,7 +15,9 @@ class ThemeController extends Controller
      */
     public function index()
     {
-        $themes = Theme::all();
+        $themes = Theme::with('questions')->get();
+//        $themes = Theme::get();
+
         return view('front.themes.index', compact('themes'));
     }
 
@@ -32,7 +34,7 @@ class ThemeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -43,18 +45,20 @@ class ThemeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Theme $theme, $slug)
     {
-        //
+        $theme = $theme->with('questions.translations', 'translations', 'questions')->first();
+
+        return view('front.themes.show', compact('theme'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -65,8 +69,8 @@ class ThemeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -77,7 +81,7 @@ class ThemeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -28,6 +28,8 @@ require __DIR__ . '/auth.php';
 Route::localizedGroup(function () {
     Route::get('/', [MainController::class, 'index'])->name('main.page');
     Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
+    Route::get('/themes/{slug}', [ThemeController::class, 'show'])->name('theme.answer');
+//    Route::get('/themes/{themes:slug}/{questions:slug}', [ThemeController::class, 'show'])->name('theme.answer');
 
     Route::prefix('/contact')->name('contact.')->group(function () {
         Route::get('/', [ContactController::class, 'index'])->name('index');

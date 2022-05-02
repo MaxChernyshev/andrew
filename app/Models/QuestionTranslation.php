@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class ThemeTranslation extends Model
+class QuestionTranslation extends Model
 {
     use HasFactory;
 
     public $timestamps = false;
 
     protected $fillable = [
-        'theme_id',
+        'question_id',
         'title',
         'content',
+        'answer',
     ];
 }
