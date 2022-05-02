@@ -2,7 +2,16 @@
     "/js/app.js": "/js/app.js",
     "/js/front/js/app.js": "/js/front/js/app.js",
     "/js/admin/js/adminlte.js": "/js/admin/js/adminlte.js",
+    "/css/admin/css/app.css": "/css/admin/css/app.css",
     "/css/front/css/app.css": "/css/front/css/app.css",
     "/css/app.css": "/css/app.css",
+    "/webfonts/fa-brands-400.ttf": "/webfonts/fa-brands-400.ttf",
+    "/webfonts/fa-brands-400.woff2": "/webfonts/fa-brands-400.woff2",
+    "/webfonts/fa-regular-400.ttf": "/webfonts/fa-regular-400.ttf",
+    "/webfonts/fa-regular-400.woff2": "/webfonts/fa-regular-400.woff2",
+    "/webfonts/fa-solid-900.ttf": "/webfonts/fa-solid-900.ttf",
+    "/webfonts/fa-solid-900.woff2": "/webfonts/fa-solid-900.woff2",
+    "/webfonts/fa-v4compatibility.ttf": "/webfonts/fa-v4compatibility.ttf",
+    "/webfonts/fa-v4compatibility.woff2": "/webfonts/fa-v4compatibility.woff2",
     "/css/admin/css/adminlte.css": "/css/admin/css/adminlte.css"
 }

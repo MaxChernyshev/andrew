@@ -5,6 +5,7 @@ use App\Http\Controllers\Front\MainController;
 use App\Http\Controllers\Admin\AdminPanelController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\ThemeController;
+use App\Http\Livewire\Admin\Theme;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,8 @@ use App\Http\Controllers\Front\ThemeController;
 |
 */
 
-Route::get('/dashboard', function () {
+Route::get('/dashboard', function ()
+{
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
@@ -25,13 +27,15 @@ require __DIR__ . '/auth.php';
 
 // Front
 
-Route::localizedGroup(function () {
+Route::localizedGroup(function ()
+{
     Route::get('/', [MainController::class, 'index'])->name('main.page');
     Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
     Route::get('/themes/{slug}', [ThemeController::class, 'show'])->name('theme.answer');
 //    Route::get('/themes/{themes:slug}/{questions:slug}', [ThemeController::class, 'show'])->name('theme.answer');
 
-    Route::prefix('/contact')->name('contact.')->group(function () {
+    Route::prefix('/contact')->name('contact.')->group(function ()
+    {
         Route::get('/', [ContactController::class, 'index'])->name('index');
         Route::post('/', [ContactController::class, 'store'])->name('store');
     });
@@ -42,8 +46,9 @@ Route::localizedGroup(function () {
 Route::prefix('admin')
     ->name('admin.')
     ->middleware('admin')
-    ->group(function () {
+    ->group(function ()
+    {
         Route::get('/', [AdminPanelController::class, 'index'])->name('panel');
-
+        Route::get('/theme', Theme::class)->name('themes');
     }
     );
