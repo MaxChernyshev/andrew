@@ -8,6 +8,8 @@
         "php": "^7.3|^8.0",
         "arcanedev/localization": "^8.1",
         "astrotomic/laravel-translatable": "^11.9",
+        "cviebrock/eloquent-sluggable": "^8.0",
+        "doctrine/dbal": "^3.3",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "irazasyed/telegram-bot-sdk": "^3.6",

@@ -1,4 +1,4 @@
-<img src="{{ asset('img/logo.png') }}" alt="max" class="brand-image " style="opacity: .8">
+<img src="{{ asset('img/bg-logo.jpeg') }}" alt="max" class="brand-image " style="opacity: .8">
 
 
 {{--<svg viewBox="0 0 316 316" xmlns="http://www.w3.org/2000/svg" {{ $attributes }}>--}}

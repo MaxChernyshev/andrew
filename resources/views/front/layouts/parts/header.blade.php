@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,7 +37,8 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <a class="nav-link text-white" href="{{ route('main.page') }}">Home</a>
-                            <a class="nav-link text-white" href="{{ route('contact.index') }}">Contact</a>
+{{--                            <a class="nav-link text-white" href="{{ route('contact.index') }}">Contact</a>--}}
+                            <a class="nav-link text-white" href="{{ route('themes') }}">Themes</a>
                         </div>
                     </div>
                 </nav>
