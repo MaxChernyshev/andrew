@@ -39,6 +39,9 @@ Route::localizedGroup(function ()
         Route::get('/', [ContactController::class, 'index'])->name('index');
         Route::post('/', [ContactController::class, 'store'])->name('store');
     });
+    Route::get('/faq', function (){
+        return view('front.faq');
+    });
 });
 
 
@@ -52,3 +55,6 @@ Route::prefix('admin')
         Route::get('/theme', Theme::class)->name('themes');
     }
     );
+
+
+

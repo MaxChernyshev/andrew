@@ -19,7 +19,7 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
 
 
 // FRONT
-mix.js('resources/js/front/app.js', 'public/js/front/js')
+mix.js(['resources/js/front/app.js', 'resources/js/front/faq.js'], 'public/js/front/js')
     .sass('resources/sass/front/app.scss', 'public/css/front/css')
     .sourceMaps();
 

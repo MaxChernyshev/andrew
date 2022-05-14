@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Marmelad');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 // Variables
 @import '_variables';
@@ -7,6 +7,9 @@
 // Bootstrap
 @import '../../../node_modules/bootstrap/scss/bootstrap';
 
+//header + footer
+@import 'header';
+@import 'footer';
 
 body {
     background: #F7F5FB;
