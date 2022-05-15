@@ -10,7 +10,7 @@ return [
     | Contains an array with the applications available locales.
     |
     */
-    'locales' => ['en', 'ru', 'uk'],
+    'locales' => ['en', 'fr'],
 
     /*
     |--------------------------------------------------------------------------
@@ -49,7 +49,10 @@ return [
     | $useTranslationFallback when defined
     |
     */
-    'use_fallback' => false,
+
+//    default translation when a translation has not been found
+    'use_fallback' => true,
+//    'use_fallback' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -135,6 +138,7 @@ return [
      *
      */
     'rule_factory' => [
+//        'format' => \Astrotomic\Translatable\Validation\RuleFactory::FORMAT_KEY,
         'format' => \Astrotomic\Translatable\Validation\RuleFactory::FORMAT_ARRAY,
         'prefix' => '%',
         'suffix' => '%',

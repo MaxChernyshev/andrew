@@ -19,7 +19,7 @@ class Theme extends Model implements TranslatableContract
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'en_title'
             ]
         ];
     }
@@ -33,7 +33,7 @@ class Theme extends Model implements TranslatableContract
         'image',
     ];
 
-    public function questions(){
-        return $this->hasMany(Question::class);
-    }
+//    public function questions(){
+//        return $this->hasMany(Question::class);
+//    }
 }
