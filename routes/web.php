@@ -7,6 +7,8 @@ use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\ThemeController;
 use App\Http\Livewire\Admin\Theme;
 
+//use App\Http\Livewire\Admin\Theme as ThemeL;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +51,7 @@ Route::prefix('admin')
     ->group(function ()
     {
         Route::get('/', [AdminPanelController::class, 'index'])->name('panel');
-        Route::get('/theme', Theme::class)->name('themes');
+
+        Route::get('/themes', Theme::class)->name('themes');
     }
     );

@@ -33,31 +33,38 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item ">
-                <a href="#" class="nav-link active">
+{{--            <li class="nav-item ">--}}
+{{--                <a href="#" class="nav-link @if(Route::currentRouteName() ==='admin.panel')active @endif">--}}
+{{--                    <i class="nav-icon fas fa-tachometer-alt"></i>--}}
+{{--                    <p>--}}
+{{--                        Home--}}
+{{--                        <i class="right fas fa-angle-left"></i>--}}
+{{--                    </p>--}}
+{{--                </a>--}}
+{{--                <ul class="nav nav-treeview">--}}
+{{--                    <li class="nav-item">--}}
+{{--                        <a href="#" class="nav-link">--}}
+{{--                            <i class="far fa-circle nav-icon"></i>--}}
+{{--                            <p>Sample Page</p>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                    <li class="nav-item">--}}
+{{--                        <a href="#" class="nav-link">--}}
+{{--                            <i class="far fa-circle nav-icon"></i>--}}
+{{--                            <p>Sample Page</p>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                </ul>--}}
+{{--            </li>--}}
+
+            <li>
+                <a href="{{ route('admin.panel') }}" class="nav-link @if(Route::currentRouteName() ==='admin.panel')active @endif">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
-                    <p>
-                        Home
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
+                    <p>Home</p>
                 </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Sample Page</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Sample Page</p>
-                        </a>
-                    </li>
-                </ul>
             </li>
             <li>
-                <a href="{{ route('admin.themes') }}" class="nav-link active">
+                <a href="{{ route('admin.themes') }}" class="nav-link @if(Route::currentRouteName() ==='admin.themes')active @endif">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>Themes</p>
                 </a>

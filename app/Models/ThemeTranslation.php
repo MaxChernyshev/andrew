@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
 class ThemeTranslation extends Model
 {
     use HasFactory;
@@ -13,8 +12,8 @@ class ThemeTranslation extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'theme_id',
         'title',
         'content',
     ];
+
 }

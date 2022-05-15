@@ -3,6 +3,20 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
+                    @if (session()->has('message'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <p>
+                                {{ session('message') }}
+                            </p>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">All Themes</h3>
@@ -19,6 +33,7 @@
                                     <th>#</th>
                                     <th>Title</th>
                                     <th>Content</th>
+                                    <th>Image</th>
                                     <th>Active</th>
                                     <th>Actions</th>
                                 </tr>
@@ -29,6 +44,9 @@
                                         <td>{{ $theme->id }}</td>
                                         <td>{{ $theme->title }}</td>
                                         <td>{{ $theme->content }}</td>
+                                        <td>
+                                            <img src="{{ $theme->image ? asset('storage/'.$theme->image) : asset('storage/no-image.png') }}" style="width: 75px" alt="">
+                                        </td>
                                         <td>{{ $theme->active }}</td>
                                         <td>
                                             <div class="d-flex">
