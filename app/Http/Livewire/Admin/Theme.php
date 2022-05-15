@@ -2,23 +2,17 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Models\ThemeTranslation;
-use Illuminate\Support\Facades\Request;
-use Illuminate\Support\Str;
 use Livewire\Component;
 use App\Models\Theme as ThemeModel;
 use Livewire\WithPagination;
-use App\Traits\LocalizationRules;
 use Livewire\WithFileUploads;
 use Astrotomic\Translatable\Validation\RuleFactory;
 use App\Traits\LocaleRules;
 
-use Cviebrock\EloquentSluggable\Sluggable;
 
 class Theme extends Component
 {
     use WithPagination;
-    use LocalizationRules;
     use WithFileUploads;
     use LocaleRules;
 
@@ -35,6 +29,11 @@ class Theme extends Component
     public $newImage;
     public $image;
     public $fields = [];
+    public $search = '';
+    public $active;
+    public $theme;
+    public $sortColumnName = 'id';
+    public $sortDirection = 'desc';
 
 
     public function mount()
@@ -49,9 +48,9 @@ class Theme extends Component
 
         $themes = $themes
             ->with('translations')
-//            ->whereTranslationLike('name', '%' . $this->search . '%')
-//            ->orderByDesc('is_top')
-//            ->orderByDesc('sales')
+            ->whereTranslationLike('title', '%' . $this->search . '%')
+//            ->orWhereTranslationLike('content', '%' . $this->search . '%')
+            ->orderBy($this->sortColumnName, $this->sortDirection)
             ->paginate($perPage);
 
 
@@ -59,33 +58,6 @@ class Theme extends Component
             ->extends('admin.layouts.layout')
             ->section('content');
     }
-
-
-//    public function rules()
-//    {
-//        foreach ($this->makeLocalizationRules(true, [
-//            'title' => ['sometimes', 'string'],
-//            'content' => ['sometimes', 'string'],
-//        ]) as $key => $value)
-//        {
-//            $fieldsLocalization["$key"] = $value;
-//        }
-//
-//        $rules = [
-//            'image' => ['image', 'nullable', 'mimes:jpg,png', 'max:2048'],
-//        ];
-//
-//        $rules = array_merge($fieldsLocalization, $rules);
-//
-//
-//        foreach ($rules as $key => $value)
-//        {
-//            $newRules[str_replace('.', '_', $key)] = $value;
-//        }
-//        $rules = $newRules;
-//
-//        return $rules;
-//    }
 
     public function rules()
     {
@@ -109,67 +81,43 @@ class Theme extends Component
         return $rules;
     }
 
-
     public function save()
     {
-
         $data = $this->newRules($this->validate());
-        dd($data);
 
-//        $fields = [
-//            'fields' => [
-//                'en' => [
-//                    'title' => $data['en_title'],
-//                    'content' => $data['en_content'],
-//                ],
-//                'fr' => [
-//                    'title' => $data['fr_title'],
-//                    'content' => $data['fr_content'],
-//                ],
-//
-//                'slug' => 'qwwq',
-//            ],
-//        ];
+        $theme = ThemeModel::create(
+            $data['fields'],
+        );
 
-        $theme = ThemeModel::create($data['fields']);
+        if ($data['fields']['image'])
+        {
+            $imageUrl = $data['fields']['image']->store('theme', 'public');
+            $theme->update([
+                'image' => $imageUrl,
+                // TODO SLUG must be unique
+                'slug' => strtolower(str_replace(' ', '-', $theme->translate('en')->title)),
+            ]);
+        }
+        $this->resetInput();
 
-        dd($theme);
-
-//        $data = $this->validate();
-//
-//        $fields = 'translations.';
-//
-//        foreach ($data as $key => $value)
-//        {
-//            $newRules[str_replace('_', '.', $key)] = $value;
-//        }
-//
-//        foreach ($newRules as $key => $value)
-//        {
-//            $needed[$fields . $key] = $value;
-//        }
-//
-//        $theme = ThemeModel::create($needed['translations']);
-//
-//        dd($theme);
-
-//        if ($data['image'])
-//        {
-//            $imageUrl = $data['image']->store('theme', 'public');
-//        }
-//        $assa = ThemeModel::create(
-//            [
-//                'slug' => $data['en_title'],
-//                'image' => $imageUrl,
-//            ],
-//        );
-
-
-//        $this->resetInput();
         $this->updateMode = 'index';
 
         session()->flash('message', 'Theme was created');
+    }
 
+    public function switchActive($theme)
+    {
+        $item = ThemeModel::where('id', $theme)->first();
+
+        $item->active == 1 ? $item->update(['active' => false]) : $item->update(['active' => true]);
+//        if ($item->active == 1)
+//        {
+//            $item->update(['active' => false]);
+//        }
+//        else
+//        {
+//            $item->update(['active' => true]);
+//        }
     }
 
     public function createTheme()
@@ -199,11 +147,34 @@ class Theme extends Component
         $this->updateMode = 'index';
     }
 
-    private function resetInput()
+    public function search()
+    {
+        return $this->search;
+    }
+
+    public function resetInput()
     {
         $this->en_title = null;
         $this->fr_title = null;
         $this->en_content = null;
         $this->fr_content = null;
+        $this->image = null;
     }
+
+    public function sortBy($columnName)
+    {
+        if ($this->sortColumnName === $columnName) {
+            $this->sortDirection = $this->swapSortDirection();
+        } else {
+            $this->sortDirection = 'asc';
+        }
+
+        $this->sortColumnName = $columnName;
+    }
+
+    public function swapSortDirection()
+    {
+        return $this->sortDirection === 'asc' ? 'desc' : 'asc';
+    }
+
 }

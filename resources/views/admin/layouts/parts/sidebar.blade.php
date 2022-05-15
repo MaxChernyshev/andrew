@@ -3,7 +3,7 @@
         <span class="text-white font-weight-light">Admin Panel</span>
     </div>
     <a href="{{ route('main.page') }}" target="_blank" class="brand-link">
-        <img src="{{ asset('img/logo.jpg') }}" alt="max" class="brand-image " style="opacity: .8">
+        <img src="{{ asset('img/logo.png') }}" alt="max" class="brand-image " style="opacity: .8">
         <br>
 
     </a>
@@ -59,16 +59,23 @@
 
             <li>
                 <a href="{{ route('admin.panel') }}" class="nav-link @if(Route::currentRouteName() ==='admin.panel')active @endif">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fas fa-home"></i>
                     <p>Home</p>
                 </a>
             </li>
             <li>
                 <a href="{{ route('admin.themes') }}" class="nav-link @if(Route::currentRouteName() ==='admin.themes')active @endif">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                    <p>Themes</p>
+                    <i class="nav-icon fas fa-map-signs"></i>
+                    <p>Subjects</p>
                 </a>
             </li>
+            <li>
+                <a href="#" class="nav-link @if(Route::currentRouteName() ==='admin.answers')active @endif">
+                    <i class="nav-icon fas fa-question-circle "></i>
+                    <p>Questions-Answers</p>
+                </a>
+            </li>
+
         </ul>
     </nav>
     </div>

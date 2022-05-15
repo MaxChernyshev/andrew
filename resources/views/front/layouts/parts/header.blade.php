@@ -52,7 +52,7 @@
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <ul class="nav justify-content-end">
                     <li class="nav-item header_menu_item">
-                        <a class="nav-link header_menu_link" href="{{ asset('faq') }}">FAQ</a>
+                        <a class="nav-link header_menu_link" href="{{ route('themes') }}">FAQ</a>
                     </li>
                     <li class="nav-item header_menu_item">
                         <a class="nav-link header_menu_link" href="https://lifeworks.com/en">Our website</a>

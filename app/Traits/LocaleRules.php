@@ -8,7 +8,7 @@ trait LocaleRules
     {
         $newArray = [];
         $fieldNames = [];
-        $aaa = [];
+        $interimArray = [];
         $needed = [];
 
         $locales = localization()->getSupportedLocalesKeys();
@@ -36,15 +36,16 @@ trait LocaleRules
             if (in_array($locale, $locales) && in_array($fieldName, $fieldNames))
             {
                 foreach ($newArray['fields'] as $k => $v) {
-                    $aaa[$locale][$fieldName] = $value;
+                    $interimArray[$locale][$fieldName] = $value;
                 }
+            }
+            else {
+                $interimArray[$key] = $value;
             }
 
         }
 
-        $needed['fields'] = $aaa;
-
-//        dd($needed);
+        $needed['fields'] = $interimArray;
 
         return $needed;
     }
