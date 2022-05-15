@@ -33,7 +33,7 @@ Route::localizedGroup(function ()
 {
     Route::get('/', [MainController::class, 'index'])->name('main.page');
     Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
-    Route::get('/themes/{slug}', [ThemeController::class, 'show'])->name('theme.answer');
+    Route::get('/themes/{slug}', [ThemeController::class, 'show'])->name('theme.question');
 //    Route::get('/themes/{themes:slug}/{questions:slug}', [ThemeController::class, 'show'])->name('theme.answer');
 
     Route::prefix('/contact')->name('contact.')->group(function ()
@@ -56,6 +56,8 @@ Route::prefix('admin')
         Route::get('/', [AdminPanelController::class, 'index'])->name('panel');
 
         Route::get('/themes', Theme::class)->name('themes');
+
+        Route::get('/answers', Theme::class)->name('answers');
     }
     );
 
