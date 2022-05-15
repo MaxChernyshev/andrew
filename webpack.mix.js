@@ -19,7 +19,11 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
 
 
 // FRONT
-mix.js(['resources/js/front/app.js', 'resources/js/front/faq.js'], 'public/js/front/js')
+mix.js([
+        'resources/js/front/app.js',
+        'node_modules/admin-lte/plugins/popper/popper.js',
+    ],
+    'public/js/front/js')
     .sass('resources/sass/front/app.scss', 'public/css/front/css')
     .sourceMaps();
 
@@ -27,10 +31,12 @@ mix.js(['resources/js/front/app.js', 'resources/js/front/faq.js'], 'public/js/fr
 // ADMIN
 mix.js([
     // 'resources/js/admin/app.js',
+    'node_modules/admin-lte/plugins/popper/popper.js',
     'node_modules/admin-lte/dist/js/adminlte.js',
-    'node_modules/admin-lte/plugins/jquery/jquery.min.js',
-    'node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js',
-    'node_modules/admin-lte/dist/js/adminlte.min.js',
+    'node_modules/admin-lte/plugins/jquery/jquery.js',
+    'node_modules/admin-lte/plugins/bootstrap/js/bootstrap.js',
+    // 'node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js',
+
 ], 'public/js/admin/js')
     .copy(
         'node_modules/@fortawesome/fontawesome-free/webfonts',
