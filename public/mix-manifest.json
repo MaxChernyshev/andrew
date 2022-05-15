@@ -1,8 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/front/js/app.js": "/js/front/js/app.js",
-    "/js/admin/js/adminlte.js": "/js/admin/js/adminlte.js",
+    "/js/admin/js/popper.js": "/js/admin/js/popper.js",
     "/css/admin/css/app.css": "/css/admin/css/app.css",
+    "/css/front/css/app.css": "/css/front/css/app.css",
     "/css/app.css": "/css/app.css",
     "/webfonts/fa-brands-400.ttf": "/webfonts/fa-brands-400.ttf",
     "/webfonts/fa-brands-400.woff2": "/webfonts/fa-brands-400.woff2",
