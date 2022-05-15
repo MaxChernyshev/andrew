@@ -11,11 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'public/css', [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('autoprefixer'),
-]);
+mix.js('resources/js/app.js', 'public/js')
+    .postCss('resources/css/app.css', 'public/css',
+        [
+            require('postcss-import'),
+            require('tailwindcss'),
+            require('autoprefixer'),
+        ]
+    );
 
 
 // FRONT
@@ -26,6 +29,7 @@ mix.js([
     'public/js/front/js')
     .sass('resources/sass/front/app.scss', 'public/css/front/css')
     .sourceMaps();
+
 
 
 // ADMIN

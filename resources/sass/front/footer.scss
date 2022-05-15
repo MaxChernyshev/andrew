@@ -1,1 +1,65 @@
+footer {
+    &#footer {
+        background-color: white;
 
+        .footer_menu_item {
+            padding: 0.8rem;
+
+            .footer_menu_link {
+                padding: 0;
+                margin: 0;
+                font-size: 1rem;
+                color: black;
+                position: relative;
+            }
+
+            .footer_menu_link:before {
+                content: '';
+                width: 100%;
+                height: 1px;
+                background-color: black;
+                position: absolute;
+                left: 0;
+                bottom: 4px;
+                transform: scaleX(0);
+            }
+
+            .footer_menu_link:hover:before {
+                transform: scaleX(1);
+            }
+
+            .footer_menu_link:hover {
+                color: black;
+            }
+        }
+
+        .footer_year {
+            padding: 0 1.6rem 0.8rem;
+            margin: 0;
+        }
+
+        .footer_menu_1_6 {
+            padding: 0 0 0 1.6rem;
+        }
+
+        .footer_lang {
+            border: 1px solid black;
+            padding: .2rem .8rem;
+            border-radius: 25%;
+            line-height: 1;
+            width: 6rem;
+
+            a {
+                color: black;
+            }
+        }
+
+        .footer_lang:hover {
+            background-color: black;
+
+            a {
+                color: white;
+            }
+        }
+    }
+}

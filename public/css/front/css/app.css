@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Marmelad);
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
@@ -10019,10 +10019,93 @@ h3 {
     border-color: #dee2e6;
   }
 }
-body {
-  font-family: "Montserrat", sans-serif;
+header#header {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  padding: 1.6rem 0.8rem 1.6rem 0.8rem;
+}
+header#header .logo_block {
+  width: 13.8rem;
+}
+header#header .header_menu_item {
+  padding: 0.8rem 1.6rem;
+}
+header#header .header_menu_item .header_menu_link {
+  font-size: 1rem;
+  color: black;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+header#header .header_menu_item .header_menu_link:before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #A4A4FF;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+header#header .header_menu_item .header_menu_link:hover {
+  color: black;
+}
+header#header .header_menu_item .header_menu_link:hover:before {
+  transform: scaleX(1);
+  transition: transform 0.25s;
 }
 
-header .top-header {
-  background: #ffffff;
+footer#footer {
+  background-color: white;
+}
+footer#footer .footer_menu_item {
+  padding: 0.8rem;
+}
+footer#footer .footer_menu_item .footer_menu_link {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  color: black;
+  position: relative;
+}
+footer#footer .footer_menu_item .footer_menu_link:before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  transform: scaleX(0);
+}
+footer#footer .footer_menu_item .footer_menu_link:hover:before {
+  transform: scaleX(1);
+}
+footer#footer .footer_menu_item .footer_menu_link:hover {
+  color: black;
+}
+footer#footer .footer_year {
+  padding: 0 1.6rem 0.8rem;
+  margin: 0;
+}
+footer#footer .footer_menu_1_6 {
+  padding: 0 0 0 1.6rem;
+}
+footer#footer .footer_lang {
+  border: 1px solid black;
+  padding: 0.2rem 0.8rem;
+  border-radius: 25%;
+  line-height: 1;
+  width: 6rem;
+}
+footer#footer .footer_lang a {
+  color: black;
+}
+footer#footer .footer_lang:hover {
+  background-color: black;
+}
+footer#footer .footer_lang:hover a {
+  color: white;
 }
