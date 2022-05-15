@@ -6,7 +6,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">
-                                Creating Subject
+                                Creating Question
                             </h3>
                         </div>
                         <div class="card-body">
@@ -20,7 +20,21 @@
                             {{--                                @endforeach--}}
                             {{--                            </ul>--}}
                             <!-- END Languages TABS -->
+                            <div class="form-group col-12">
 
+                                @if(!is_null($themes))
+
+                                    <div class="col-md-12 mb-3">
+                                        <select id="theme_id" class="form-control" wire:model="theme_id">
+                                            <option value="">Choose Subject</option>
+                                            @foreach($themes as $theme)
+                                                <option value="{{ $theme->id }}">{{ $theme->title }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('theme_id') <span class="text-danger">{{ $message }}</span>@enderror
+                                    </div>
+                                @endif
+                            </div>
                             <div class="form-group col-12">
                                 <ul class="nav nav-tabs">
                                     @foreach( localization()->getSupportedLocalesKeys() as $lang )

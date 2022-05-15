@@ -1,4 +1,5 @@
-<footer class="fixed-bottom" id="footer">
+<footer class="bottom" id="footer">
+{{--<footer class="fixed-bottom" id="footer">--}}
     <div class="container">
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -30,21 +31,21 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12">
-                <div class="container">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="#">Navbar</a>
-                    </nav>
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="#">Navbar</a>
-                    </nav>
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="#">Navbar</a>
-                    </nav>
-                </div>
-            </div>
-        </div>
+{{--        <div class="row">--}}
+{{--            <div class="col-12">--}}
+{{--                <div class="container">--}}
+{{--                    <nav class="navbar navbar-expand-lg navbar-light bg-light">--}}
+{{--                        <a class="navbar-brand" href="#">Navbar</a>--}}
+{{--                    </nav>--}}
+{{--                    <nav class="navbar navbar-expand-lg navbar-light bg-light">--}}
+{{--                        <a class="navbar-brand" href="#">Navbar</a>--}}
+{{--                    </nav>--}}
+{{--                    <nav class="navbar navbar-expand-lg navbar-light bg-light">--}}
+{{--                        <a class="navbar-brand" href="#">Navbar</a>--}}
+{{--                    </nav>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
         <div class="row pt-2 pb-2">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 footer_menu_1_6">

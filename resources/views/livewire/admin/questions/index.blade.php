@@ -19,12 +19,12 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">All Subjects</h3>
+                            <h3 class="card-title">All Questions</h3>
                         </div>
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-3">
-                                    <button wire:click="createTheme" class="btn btn-sm btn-info">Create Subject</button>
+                                    <button wire:click="create" class="btn btn-sm btn-info">Create Question</button>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
@@ -52,7 +52,15 @@
                                             <i class="fas fa-arrow-down {{ $sortColumnName === 'id' && $sortDirection === 'desc' ? '' : 'text-muted' }}"></i>
                                         </span>
                                     </th>
-                                    <th>Title</th>
+                                    <th>Title <br>
+{{--                                        <span wire:click="sortBy('{{ localization()->getCurrentLocale() }}.title')" class="" style="cursor: pointer;">--}}
+{{--                                        <span wire:click="sortBy('{{ translate('en')->title }}')" class="" style="cursor: pointer;">--}}
+{{--                                            <i class="fas fa-arrow-up   {{ $sortColumnName === 'id' && $sortDirection === 'asc'  ? '' : 'text-muted' }}"></i>--}}
+{{--                                            <i class="fas fa-arrow-down {{ $sortColumnName === 'id' && $sortDirection === 'desc' ? '' : 'text-muted' }}"></i>--}}
+{{--                                        </span>--}}
+
+                                    </th>
+{{--                                    <th>Subject Title</th>--}}
                                     <th>Content</th>
                                     <th>Image</th>
                                     <th>Active</th>
@@ -60,26 +68,27 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($themes as $theme)
+                                @foreach($questions as $question)
                                     <tr>
-                                        <td>{{ $theme->id }}</td>
-                                        <td>{{ $theme->title }}</td>
-                                        <td>{{ $theme->content }}</td>
+                                        <td>{{ $question->id }}</td>
+                                        <td>{{ $question->title }}</td>
+{{--                                        <td>{{ $question->themes()->id }}</td>--}}
+                                        <td>{{ $question->content }}</td>
                                         <td>
-                                            <img src="{{ $theme->image ? asset('storage/'.$theme->image) : asset('storage/no-image.png') }}" style="width: 75px" alt="">
+                                            <img src="{{ $question->image ? asset('storage/'.$question->image) : asset('storage/no-image.png') }}" style="width: 75px" alt="">
                                         </td>
                                         <td>
                                             <div class="form-check">
-                                                <input wire:click="switchActive({{ $theme->id }})" type="checkbox" {{ $theme->active ? 'checked' : '' }}>
+                                                <input wire:click="switchActive({{ $question->id }})" type="checkbox" {{ $question->active ? 'checked' : '' }}>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="d-flex">
                                                 <div class="m-1">
-                                                    <button wire:click="updateTheme({{ $theme->id }})" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
+                                                    <button wire:click="update({{ $question->id }})" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
                                                 </div>
                                                 <div class="m-1">
-                                                    <button wire:click="deleteTheme({{ $theme->id }})" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                    <button wire:click="delete({{ $question->id }})" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
                                                 </div>
                                             </div>
                                         </td>
@@ -88,7 +97,7 @@
                                 </tbody>
                             </table>
                             <div class="m-3">
-                                {{ $themes->links() }}
+                                {{ $questions->links() }}
                             </div>
                         </div>
                     </div>

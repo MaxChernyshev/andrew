@@ -33,7 +33,14 @@ class Theme extends Model implements TranslatableContract
         'image',
     ];
 
-    public function questions(){
+
+    public function questions()
+    {
         return $this->hasMany(Question::class);
+    }
+
+    public function scopeActive($query, $val)
+    {
+        return $query->where('active', true);
     }
 }

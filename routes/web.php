@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\AdminPanelController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\ThemeController;
 use App\Http\Livewire\Admin\Theme;
+use App\Http\Livewire\Admin\Question;
+
 
 //use App\Http\Livewire\Admin\Theme as ThemeL;
 
@@ -57,7 +59,7 @@ Route::prefix('admin')
 
         Route::get('/themes', Theme::class)->name('themes');
 
-        Route::get('/answers', Theme::class)->name('answers');
+        Route::get('/questions', Question::class)->name('questions');
     }
     );
 

@@ -33,7 +33,7 @@ class Question extends Model  implements TranslatableContract
         'image',
     ];
 
-    public function theme(){
+    public function themes(){
         return $this->belongsTo(Theme::class);
     }
 
