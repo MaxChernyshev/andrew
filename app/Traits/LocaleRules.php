@@ -20,6 +20,7 @@ trait LocaleRules
             $fieldNames[] = mb_substr($key, 3, strlen($key) - 2);
         }
 
+
         $fieldNames = array_unique($fieldNames);
 
         foreach ($data as $key => $value)

@@ -70,7 +70,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link @if(Route::currentRouteName() ==='admin.answers')active @endif">
+                <a href="{{ route('admin.questions') }}" class="nav-link @if(Route::currentRouteName() ==='admin.questions')active @endif">
                     <i class="nav-icon fas fa-question-circle "></i>
                     <p>Questions-Answers</p>
                 </a>

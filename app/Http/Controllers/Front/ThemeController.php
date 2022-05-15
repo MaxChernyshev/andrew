@@ -15,7 +15,9 @@ class ThemeController extends Controller
      */
     public function index()
     {
-        $themes = Theme::with('questions', 'translation')->get();
+        $themes = Theme::with('questions', 'translation')
+            ->where('active', true)
+            ->get();
 
         return view('front.themes.index', compact('themes'));
     }
