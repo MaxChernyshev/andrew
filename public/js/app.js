@@ -362,9 +362,10 @@ eval("/* module decorator */ module = __webpack_require__.nmd(module);\nvar __WE
 /*!***************************************!*\
   !*** ./resources/sass/front/app.scss ***!
   \***************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"}\".\n  ╷\n1 │ !\n  │ ^\n  ╵\n  resources/sass/front/footer.scss 1:1  @import\n  resources/sass/front/app.scss 12:9    root stylesheet\n    at processResult (/var/www/andrews-faq/node_modules/webpack/lib/NormalModule.js:758:19)\n    at /var/www/andrews-faq/node_modules/webpack/lib/NormalModule.js:860:5\n    at /var/www/andrews-faq/node_modules/loader-runner/lib/LoaderRunner.js:399:11\n    at /var/www/andrews-faq/node_modules/loader-runner/lib/LoaderRunner.js:251:18\n    at context.callback (/var/www/andrews-faq/node_modules/loader-runner/lib/LoaderRunner.js:124:13)\n    at Object.loader (/var/www/andrews-faq/node_modules/sass-loader/dist/index.js:69:5)");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvc2Fzcy9mcm9udC9hcHAuc2Nzcy5qcyIsIm1hcHBpbmdzIjoiO0FBQUEiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvc2Fzcy9mcm9udC9hcHAuc2Nzcz8yOGEyIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIGV4dHJhY3RlZCBieSBtaW5pLWNzcy1leHRyYWN0LXBsdWdpblxuZXhwb3J0IHt9OyJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/sass/front/app.scss\n");
 
 /***/ }),
 
@@ -535,6 +536,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/admin/css/app": 0,
+/******/ 			"css/front/css/app": 0,
 /******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
@@ -585,10 +587,10 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/admin/css/app","css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/admin/css/app","css/app"], () => (__webpack_require__("./resources/sass/front/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/admin/css/app","css/app"], () => (__webpack_require__("./resources/sass/admin/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/admin/css/app","css/app"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/admin/css/app","css/front/css/app","css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/admin/css/app","css/front/css/app","css/app"], () => (__webpack_require__("./resources/sass/front/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/admin/css/app","css/front/css/app","css/app"], () => (__webpack_require__("./resources/sass/admin/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/admin/css/app","css/front/css/app","css/app"], () => (__webpack_require__("./resources/css/app.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
