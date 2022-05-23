@@ -9,20 +9,8 @@ use App\Http\Livewire\Admin\Theme;
 use App\Http\Livewire\Admin\Subject;
 use App\Http\Livewire\Admin\Question;
 use App\Http\Controllers\Admin\SubjectController;
+use App\Http\Controllers\Front\SubjectController as FrontSubject;
 
-
-//use App\Http\Livewire\Admin\Theme as ThemeL;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/dashboard', function ()
 {
@@ -36,18 +24,19 @@ require __DIR__ . '/auth.php';
 Route::localizedGroup(function ()
 {
     Route::get('/', [MainController::class, 'index'])->name('main.page');
-    Route::get('/themes', [ThemeController::class, 'index'])->name('themes');
-    Route::get('/themes/{slug}', [ThemeController::class, 'show'])->name('theme.question');
-//    Route::get('/themes/{themes:slug}/{questions:slug}', [ThemeController::class, 'show'])->name('theme.answer');
+
+    Route::get('/faq', [FrontSubject::class, 'index'])->name('faq');
+
+    Route::get('/faq/{slug}', [FrontSubject::class, 'show'])->name('theme.question');
 
     Route::prefix('/contact')->name('contact.')->group(function ()
     {
         Route::get('/', [ContactController::class, 'index'])->name('index');
         Route::post('/', [ContactController::class, 'store'])->name('store');
     });
-    Route::get('/faq', function (){
-        return view('front.faq');
-    });
+//    Route::get('/faq', function (){
+//        return view('front.faq');
+//    });
 });
 
 
