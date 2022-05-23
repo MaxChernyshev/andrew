@@ -6,6 +6,7 @@
         <div class="row">
             <div class="col-12">
                 <section>
+{{--                    @dd($subjects)--}}
 {{--                    <h2 class="title_FAQ">FAQ</h2>--}}
 
 {{--                    <div class="faq">--}}
