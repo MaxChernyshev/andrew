@@ -69,10 +69,23 @@
                     <p>Subjects</p>
                 </a>
             </li>
+
+            <li>
+                <a href="{{ route('admin.subjects') }}" class="nav-link @if(Route::currentRouteName() ==='admin.subject')active @endif">
+                    <i class="nav-icon fas fa-map-signs"></i>
+                    <p>Subjects</p>
+                </a>
+            </li>
             <li>
                 <a href="{{ route('admin.questions') }}" class="nav-link @if(Route::currentRouteName() ==='admin.questions')active @endif">
                     <i class="nav-icon fas fa-question-circle "></i>
                     <p>Questions-Answers</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('admin.proba.create') }}" class="nav-link @if(Route::currentRouteName() ==='admin.questions')active @endif">
+                    <i class="nav-icon fas fa-question-circle "></i>
+                    <p>Proba Create</p>
                 </a>
             </li>
 
