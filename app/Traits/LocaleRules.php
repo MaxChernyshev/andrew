@@ -4,50 +4,26 @@ namespace App\Traits;
 
 trait LocaleRules
 {
-    public function newRules($data)
+
+    public function makeLocalizationRules(array $translatableFields)
     {
-        $newArray = [];
-        $fieldNames = [];
-        $interimArray = [];
-        $needed = [];
-
-        $locales = localization()->getSupportedLocalesKeys();
-
-        $newArray['fields'] = array_fill_keys($locales, '');
-
-        foreach ($data as $key => $value)
+        $transRules = [];
+        foreach (localization()->getSupportedLocalesKeys() as $key)
         {
-            $fieldNames[] = mb_substr($key, 3, strlen($key) - 2);
-        }
 
+            $isDefault = localization()->getDefaultLocale() == $key;
 
-        $fieldNames = array_unique($fieldNames);
-
-        foreach ($data as $key => $value)
-        {
-            // локаль из входящего массива
-            $locale = mb_substr($key, 0, 2);
-
-            // input name из входящего массива
-            $fieldName = mb_substr($key, 3, strlen($key) - 2);
-
-            // значение input из входящего массива
-            // $value
-
-            if (in_array($locale, $locales) && in_array($fieldName, $fieldNames))
+            foreach ($translatableFields as $name => $rules)
             {
-                foreach ($newArray['fields'] as $k => $v) {
-                    $interimArray[$locale][$fieldName] = $value;
+                $reqRules = [];
+                if (!(in_array('nullable', $rules) || in_array('required', $rules)))
+                {
+                    $reqRules = [$isDefault ? 'required' : 'nullable'];
                 }
-            }
-            else {
-                $interimArray[$key] = $value;
-            }
 
+                $transRules[$key . '.' . $name] = array_merge($reqRules, $rules);
+            }
         }
-
-        $needed['fields'] = $interimArray;
-
-        return $needed;
+        return $transRules;
     }
 }

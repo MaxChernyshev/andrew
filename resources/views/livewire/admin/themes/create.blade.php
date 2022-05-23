@@ -43,12 +43,8 @@
                                                 <!-- END title -->
 
                                                 <!-- content -->
-                                                <div class="form-group ">
-                                                    <div class="form-controls row">
-                                                        <div class="col-lg-12 m-b-sm">
-                                                            <textarea wire:model.defer="{{ $lang }}_content" id="content{{ $lang }}" cols="30" rows="10" class="summernote form-control @error('content') is-invalid @enderror"></textarea>
-                                                        </div>
-                                                    </div>
+                                                <div class="form-group" wire:ignore>
+                                                    <textarea wire:model.defer="{{ $lang }}_content" id="content{{ $lang }}" cols="30" rows="10" class="summernote form-control @error('content') is-invalid @enderror"></textarea>
                                                 </div>
                                                 <!-- END content -->
 

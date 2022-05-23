@@ -9,7 +9,7 @@ use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Illuminate\Support\Str;
 
 
-class Theme extends Model implements TranslatableContract
+class Subject extends Model implements TranslatableContract
 {
     use HasFactory;
     use Translatable;
@@ -19,19 +19,18 @@ class Theme extends Model implements TranslatableContract
         parent::boot();
 
         // registering a callback to be executed upon the creation of an activity AR
-        static::creating(function ($theme)
+        static::creating(function ($subject)
         {
             // produce a slug based on the activity title
-            $slug = Str::slug($theme->translate()->title);
+            $slug = Str::slug($subject->translate()->title);
 
             // check to see if any other slugs exist that are the same & count them
             $count = static::whereRaw("slug RLIKE '^{$slug}(-[0-9]+)?$'")->count();
 
             // if other slugs exist that are the same, append the count to the slug
-            $theme->slug = $count ? "{$slug}-{$count}" : $slug;
+            $subject->slug = $count ? "{$slug}-{$count}" : $slug;
         });
     }
-
 
     public $translatedAttributes = ['title', 'content'];
 

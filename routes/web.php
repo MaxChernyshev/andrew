@@ -6,7 +6,9 @@ use App\Http\Controllers\Admin\AdminPanelController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\ThemeController;
 use App\Http\Livewire\Admin\Theme;
+use App\Http\Livewire\Admin\Subject;
 use App\Http\Livewire\Admin\Question;
+use App\Http\Controllers\Admin\SubjectController;
 
 
 //use App\Http\Livewire\Admin\Theme as ThemeL;
@@ -59,6 +61,12 @@ Route::prefix('admin')
 
         Route::get('/themes', Theme::class)->name('themes');
 
+        Route::get('/subjects', Subject::class)->name('subjects');
+        Route::get('/subjects/create', [SubjectController::class, 'create'])->name('subjects.create');
+        Route::post('/subjects/store', [SubjectController::class, 'store'])->name('subjects.store');
+        Route::get('/subjects/edit/{subject:id}', [SubjectController::class, 'edit'])->name('subjects.edit');
+        Route::put('/subjects/update/{subject:id}', [SubjectController::class, 'update'])->name('subjects.update');
+        Route::delete('/subjects/delete/{subject:id}', [SubjectController::class, 'destroy'])->name('subjects.delete');
         Route::get('/questions', Question::class)->name('questions');
     }
     );
