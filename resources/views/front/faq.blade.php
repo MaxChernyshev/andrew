@@ -6,6 +6,11 @@
         <div class="row">
             <div class="col-12">
                 <section>
+                    @foreach($subjects as $subject)
+                        <div>{{ $subject->title }}</div>
+                        <div>{{ $subject->content }}</div>
+                        <img src="{{ asset($subject->image) }}" alt="">
+                    @endforeach
 {{--                    @dd($subjects)--}}
 {{--                    <h2 class="title_FAQ">FAQ</h2>--}}
 
