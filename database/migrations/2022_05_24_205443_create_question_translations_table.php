@@ -13,7 +13,8 @@ class CreateQuestionTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('question_translations', function (Blueprint $table) {
+        Schema::create('question_translations', function (Blueprint $table)
+        {
             $table->id();
             $table->foreignId('question_id')->constrained()->cascadeOnDelete();
             $table->string('locale')->index();

@@ -9,7 +9,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
 
-class Subject extends Component
+class Subjects extends Component
 {
 
     use WithPagination;
@@ -44,9 +44,9 @@ class Subject extends Component
             ->section('content');
     }
 
-    public function switchActive($theme)
+    public function switchActive($subject)
     {
-        $item = SubjectModel::where('id', $theme)->first();
+        $item = SubjectModel::where('id', $subject)->first();
 
         $item->active == 1 ? $item->update(['active' => false]) : $item->update(['active' => true]);
     }
@@ -56,12 +56,14 @@ class Subject extends Component
         try
         {
             $subject = SubjectModel::find($id)->delete();
+
             $file = $subject->image;
-            dd($file);
-            if ($file) {
+
+            if ($file)
+            {
                 $imageService->deleteImage($file);
             }
-            session()->flash('message', "Theme deleted");
+            session()->flash('message', "Subject deleted");
         } catch (\Exception $e)
         {
             session()->flash('message', "Something goes wrong");
@@ -80,9 +82,12 @@ class Subject extends Component
 
     public function sortBy($columnName)
     {
-        if ($this->sortColumnName === $columnName) {
+        if ($this->sortColumnName === $columnName)
+        {
             $this->sortDirection = $this->swapSortDirection();
-        } else {
+        }
+        else
+        {
             $this->sortDirection = 'asc';
         }
 
