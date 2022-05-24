@@ -1,78 +1,28 @@
 @extends('front.layouts.layout')
 
 @section('content')
-
-    <div class="container">
+    <div class="container mt-5 mb-5">
         <div class="row">
-            <div class="col-12">
-                <section>
+            <div class="col-10">
+                <div class="accordion" id="accordionExample">
                     @foreach($subjects as $subject)
-                        <div>{{ $subject->title }}</div>
-                        <div>{!! $subject->content !!}</div>
-                        <img src="{{ asset($subject->image) }}" alt="">
+                        <div class="card">
+                            <div class="card-header" id="heading{{$subject->id}}">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse{{$subject->id}}" aria-expanded="true" aria-controls="collapse{{$subject->id}}">
+                                        {{ $subject->title }}
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapse{{$subject->id}}" class="collapse" aria-labelledby="heading{{$subject->id}}" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    {!! $subject->content !!}
+                                </div>
+                            </div>
+                        </div>
                     @endforeach
-{{--                    @dd($subjects)--}}
-{{--                    <h2 class="title_FAQ">FAQ</h2>--}}
-
-{{--                    <div class="faq">--}}
-{{--                        <div class="question">--}}
-{{--                            <h3>what is blabla</h3>--}}
-
-{{--                            <svg width="15" height="10" viewBox="0 0 42 25">--}}
-{{--                                <path--}}
-{{--                                    d="M3 3L21 21L39 3"--}}
-{{--                                    stroke="white"--}}
-{{--                                    stroke-width="7"--}}
-{{--                                    stroke-linecap="round"--}}
-{{--                                />--}}
-{{--                            </svg>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="answer">--}}
-{{--                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis cum cupiditate debitis dolorum eius exercitationem expedita iusto molestiae necessitatibus omnis pariatur quae qui quibusdam quidem, sed soluta tempora vitae.</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="faq">--}}
-{{--                        <div class="question">--}}
-{{--                            <h3>what is blabla</h3>--}}
-
-{{--                            <svg width="15" height="10" viewBox="0 0 42 25">--}}
-{{--                                <path--}}
-{{--                                    d="M3 3L21 21L39 3"--}}
-{{--                                    stroke="white"--}}
-{{--                                    stroke-width="7"--}}
-{{--                                    stroke-linecap="round"--}}
-{{--                                />--}}
-{{--                            </svg>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="answer">--}}
-{{--                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis cum cupiditate debitis dolorum eius exercitationem expedita iusto molestiae necessitatibus omnis pariatur quae qui quibusdam quidem, sed soluta tempora vitae.</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="faq">--}}
-{{--                        <div class="question">--}}
-{{--                            <h3>what is blabla</h3>--}}
-
-{{--                            <svg width="15" height="10" viewBox="0 0 42 25">--}}
-{{--                                <path--}}
-{{--                                    d="M3 3L21 21L39 3"--}}
-{{--                                    stroke="white"--}}
-{{--                                    stroke-width="7"--}}
-{{--                                    stroke-linecap="round"--}}
-{{--                                />--}}
-{{--                            </svg>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="answer">--}}
-{{--                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis cum cupiditate debitis dolorum eius exercitationem expedita iusto molestiae necessitatibus omnis pariatur quae qui quibusdam quidem, sed soluta tempora vitae.</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-                </section>
-
+                </div>
             </div>
         </div>
     </div>
-
 @endsection
