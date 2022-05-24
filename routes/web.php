@@ -9,6 +9,7 @@ use App\Http\Livewire\Admin\Subjects;
 use App\Http\Livewire\Admin\Questions;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Front\SubjectController as FrontSubject;
+use App\Http\Controllers\Front\QuestionController as FrontQuestion;
 
 
 Route::get('/dashboard', function ()
@@ -25,16 +26,16 @@ Route::localizedGroup(function ()
     Route::get('/', [MainController::class, 'index'])->name('main.page');
 
     Route::get('/faq', [FrontSubject::class, 'index'])->name('faq');
-    Route::get('/faq/{slug}', [FrontSubject::class, 'show'])->name('theme.question');
+
+    Route::get('/faq/{subject:slug}', [FrontSubject::class, 'show'])->name('faq.question');
+
+    Route::get('/faq/{subject:slug}/{question:slug}', [FrontQuestion::class, 'show'])->name('faq.answer');
 
 
 //    Route::prefix('/contact')->name('contact.')->group(function ()
 //    {
 //        Route::get('/', [ContactController::class, 'index'])->name('index');
 //        Route::post('/', [ContactController::class, 'store'])->name('store');
-//    });
-//    Route::get('/faq', function (){
-//        return view('front.faq');
 //    });
 });
 
