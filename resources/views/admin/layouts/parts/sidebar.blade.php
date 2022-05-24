@@ -33,30 +33,6 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-{{--            <li class="nav-item ">--}}
-{{--                <a href="#" class="nav-link @if(Route::currentRouteName() ==='admin.panel')active @endif">--}}
-{{--                    <i class="nav-icon fas fa-tachometer-alt"></i>--}}
-{{--                    <p>--}}
-{{--                        Home--}}
-{{--                        <i class="right fas fa-angle-left"></i>--}}
-{{--                    </p>--}}
-{{--                </a>--}}
-{{--                <ul class="nav nav-treeview">--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a href="#" class="nav-link">--}}
-{{--                            <i class="far fa-circle nav-icon"></i>--}}
-{{--                            <p>Sample Page</p>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a href="#" class="nav-link">--}}
-{{--                            <i class="far fa-circle nav-icon"></i>--}}
-{{--                            <p>Sample Page</p>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-{{--            </li>--}}
-
             <li>
                 <a href="{{ route('admin.panel') }}" class="nav-link @if(Route::currentRouteName() ==='admin.panel')active @endif">
                     <i class="nav-icon fas fa-home"></i>
@@ -64,14 +40,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('admin.themes') }}" class="nav-link @if(Route::currentRouteName() ==='admin.themes')active @endif">
-                    <i class="nav-icon fas fa-map-signs"></i>
-                    <p>Subjects</p>
-                </a>
-            </li>
-
-            <li>
-                <a href="{{ route('admin.subjects') }}" class="nav-link @if(Route::currentRouteName() ==='admin.subject')active @endif">
+                <a href="{{ route('admin.subjects') }}" class="nav-link @if(Route::currentRouteName() ==='admin.subjects')active @endif">
                     <i class="nav-icon fas fa-map-signs"></i>
                     <p>Subjects</p>
                 </a>
@@ -82,14 +51,6 @@
                     <p>Questions-Answers</p>
                 </a>
             </li>
-            <li>
-                <a href="{{ route('admin.proba.create') }}" class="nav-link @if(Route::currentRouteName() ==='admin.questions')active @endif">
-                    <i class="nav-icon fas fa-question-circle "></i>
-                    <p>Proba Create</p>
-                </a>
-            </li>
-
         </ul>
     </nav>
-    </div>
 </aside>

@@ -8,7 +8,7 @@
                 <section>
                     @foreach($subjects as $subject)
                         <div>{{ $subject->title }}</div>
-                        <div>{{ $subject->content }}</div>
+                        <div>{!! $subject->content !!}</div>
                         <img src="{{ asset($subject->image) }}" alt="">
                     @endforeach
 {{--                    @dd($subjects)--}}

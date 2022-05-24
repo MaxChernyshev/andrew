@@ -19,13 +19,12 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">All Subjects</h3>
+                            <h3 class="card-title">All Questions</h3>
                         </div>
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-3">
-                                    {{--                                    <button wire:click="createTheme" class="btn btn-sm btn-info">Create Subjects</button>--}}
-                                    <a href="{{ route('admin.subjects.create') }}" class="btn btn-sm btn-info">Create Subject</a>
+                                    <a href="{{ route('admin.questions.create') }}" class="btn btn-sm btn-info">Create Question</a>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
@@ -61,28 +60,28 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($subjects as $subject)
+                                @foreach($questions as $question)
                                     <tr>
-                                        <td>{{ $subject->id }}</td>
-                                        <td>{{ $subject->title }}</td>
-                                        <td>{!! $subject->content !!}</td>
+                                        <td>{{ $question->id }}</td>
+                                        <td>{{ $question->title }}</td>
+                                        <td>{!! $question->content !!}</td>
                                         <td>
-                                            <img src="{{ $subject->image ? asset($subject->image) : asset('storage/no-image.png') }}" style="width: 75px" alt="">
+                                            <img src="{{ $question->image ? asset($question->image) : asset('storage/no-image.png') }}" style="width: 75px" alt="">
                                         </td>
                                         <td>
                                             <div class="form-check">
-                                                <input wire:click="switchActive({{ $subject->id }})" type="checkbox" {{ $subject->active ? 'checked' : '' }}>
+                                                <input wire:click="switchActive({{ $question->id }})" type="checkbox" {{ $question->active ? 'checked' : '' }}>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="d-flex">
                                                 <div class="m-1">
-                                                    <a href="{{ route('admin.subjects.edit', ['subject' => $subject]) }}" class="btn btn-info btn-sm">
+                                                    <a href="{{ route('admin.questions.edit', ['question' => $question]) }}" class="btn btn-info btn-sm">
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
                                                 </div>
                                                 <div class="m-1">
-                                                    <form action="{{ route('admin.subjects.delete', ['subject' => $subject->id]) }}" method="post">
+                                                    <form action="{{ route('admin.questions.delete', ['question' => $question->id]) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger btn-sm"
@@ -92,23 +91,13 @@
                                                     </form>
                                                 </div>
                                             </div>
-
-
-{{--                                            <div class="d-flex">--}}
-{{--                                                <div class="m-1">--}}
-                                            {{--                                                    <button wire:click="updateTheme({{ $subject->id }})" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>--}}
-                                            {{--                                                </div>--}}
-                                            {{--                                                <div class="m-1">--}}
-                                            {{--                                                    <button wire:click="delete({{ $subject->id }})" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>--}}
-                                            {{--                                                </div>--}}
-                                            {{--                                            </div>--}}
                                         </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
                             <div class="m-3">
-                                {{ $subjects->links() }}
+                                {{ $questions->links() }}
                             </div>
                         </div>
                     </div>

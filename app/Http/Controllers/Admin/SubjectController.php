@@ -29,7 +29,7 @@ class SubjectController extends Controller
 
         SubjectModel::create($validated);
 
-        return redirect()->route('admin.subjects')->with('success', 'Subject Created');
+        return redirect()->route('admin.subjects')->with('success', 'Subjects Created');
 
     }
 
@@ -61,6 +61,6 @@ class SubjectController extends Controller
         }
         $subject->delete();
 
-        return redirect()->route('admin.subjects')->with('success', 'Subject was deleted');
+        return redirect()->route('admin.subjects')->with('success', 'Subjects was deleted');
     }
 }

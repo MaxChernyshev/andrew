@@ -60,7 +60,7 @@
 {{--                                        </span>--}}
 
                                     </th>
-{{--                                    <th>Subject Title</th>--}}
+{{--                                    <th>Subjects Title</th>--}}
                                     <th>Content</th>
                                     <th>Image</th>
                                     <th>Active</th>

@@ -15,7 +15,7 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('theme_id')->constrained()->cascadeOnDelete();;
+            $table->foreignId('subject_id')->constrained()->cascadeOnDelete();;
             $table->boolean('active')->default(true);
             $table->string('slug')->nullable()->unique();
             $table->string('image')->nullable();

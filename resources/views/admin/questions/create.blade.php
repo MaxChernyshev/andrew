@@ -9,12 +9,12 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">
-                                Creating Subject
+                                Creating Question
                             </h3>
                         </div>
                         <div class="card-body">
                             <div class="tabs-container">
-                                <form class="form-horizontal row d-flex flex-column" method="POST" action="{{ route('admin.subjects.store') }}" enctype="multipart/form-data">
+                                <form class="form-horizontal row d-flex flex-column" method="POST" action="{{ route('admin.questions.store') }}" enctype="multipart/form-data">
                                     @csrf
                                     <!-- Languages TABS (name, description, consist, way_to_use) -->
                                     <div class="form-group col-12">
@@ -42,19 +42,45 @@
                                                             <div class="form-controls row">
                                                                 <label for="content_{{ $lang }}" class="control-label col-lg-2">Content</label>
                                                                 <div class="col-lg-10 m-b-sm">
-                                                                    <textarea name="{{ $lang }}[content]" id="content_{{ $lang }}" cols="30" rows="10" class="summernote form-control @error('content') is-invalid @enderror" value="{{ old('content') }}"></textarea>
+                                                                    <textarea name="{{ $lang }}[content]" id="content_{{ $lang }}" cols="30" rows="10" class="summernote form-control @error('content') is-invalid @enderror"
+                                                                              value="{{ old('content') }}"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <!-- END content -->
 
-
+                                                        <!-- answer -->
+                                                        <div class="form-group ">
+                                                            <div class="form-controls row">
+                                                                <label for="answer_{{ $lang }}" class="control-label col-lg-2">Answer</label>
+                                                                <div class="col-lg-10 m-b-sm">
+                                                                    <textarea name="{{ $lang }}[answer]" id="answer_{{ $lang }}" cols="30" rows="10" class="summernote form-control @error('answer') is-invalid @enderror"
+                                                                              value="{{ old('answer') }}"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- END answer -->
                                                     </div>
                                                 </div>
                                             @endforeach
                                         </div>
                                     </div>
                                     <!-- END Languages TABS (name, description, consist, way_to_use) -->
+
+                                    <!-- Subject -->
+                                    <div class="form-group col-12">
+                                        <select class="form-control" name="subject_id">
+                                            <option>Select Subject</option>
+                                            @foreach($subjects as $subject)
+                                                <option value="{{ $subject->id }}">
+                                                    {{ $subject->title }}
+                                                </option>
+                                            @endforeach
+
+
+                                        </select>
+                                    </div>
+                                    <!-- END Subject -->
 
                                     <!-- Image -->
                                     @livewire('admin.image-loader')
