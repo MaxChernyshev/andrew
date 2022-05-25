@@ -69,8 +69,9 @@
                                             <img src="{{ $question->image ? asset($question->image) : asset('storage/no-image.png') }}" style="width: 75px" alt="">
                                         </td>
                                         <td>
-                                            <div class="form-check">
-                                                <input wire:click="switchActive({{ $question->id }})" type="checkbox" {{ $question->active ? 'checked' : '' }}>
+                                            <div class="custom-control custom-switch">
+                                                <input wire:click="switchActive({{ $question->id }})" type="checkbox" {{ $question->active ? 'checked' : '' }} class="custom-control-input" id="switchActive">
+                                                <label class="custom-control-label" for="switchActive"></label>
                                             </div>
                                         </td>
                                         <td>
