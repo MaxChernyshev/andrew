@@ -70,9 +70,17 @@
                                             <img src="{{ $subject->image ? asset($subject->image) : asset('storage/no-image.png') }}" style="width: 75px" alt="">
                                         </td>
                                         <td>
-                                            <div class="form-check">
-                                                <input wire:click="switchActive({{ $subject->id }})" type="checkbox" {{ $subject->active ? 'checked' : '' }}>
+                                            <div class="custom-control custom-switch">
+                                                <input wire:click="switchActive({{ $subject->id }})" type="checkbox" {{ $subject->active ? 'checked' : '' }} class="custom-control-input" id="switchActive{{ $subject->id }}">
+                                                <label class="custom-control-label" for="switchActive{{ $subject->id }}"></label>
                                             </div>
+
+{{--                                            <div>--}}
+{{--                                                <label class="switch">--}}
+{{--                                                    <input type="checkbox">--}}
+{{--                                                    <span class="slider round"></span>--}}
+{{--                                                </label>--}}
+{{--                                            </div>--}}
                                         </td>
                                         <td>
                                             <div class="d-flex">
