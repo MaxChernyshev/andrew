@@ -10109,3 +10109,19 @@ footer#footer .footer_lang:hover {
 footer#footer .footer_lang:hover a {
   color: white;
 }
+footer#footer .footer_doc {
+  display: flex;
+  /* flex-wrap: wrap; */
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+footer#footer .footer_form button {
+  color: black;
+  border-color: black;
+}
+footer#footer .footer_form button:hover {
+  color: white;
+  border-color: black;
+  background-color: black;
+}
