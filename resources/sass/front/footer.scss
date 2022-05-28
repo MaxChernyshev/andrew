@@ -61,5 +61,23 @@ footer {
                 color: white;
             }
         }
+        .footer_doc{
+            display: flex;
+            /* flex-wrap: wrap; */
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+        }
+        .footer_form{
+            button{
+                color: black;
+                border-color: black;
+            }
+            button:hover{
+                color: white;
+                border-color: black;
+                background-color: black;
+            }
+        }
     }
 }

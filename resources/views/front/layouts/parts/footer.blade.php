@@ -7,60 +7,38 @@
                     <a href="{{ asset('/') }}"><img id="logotipe" src="{{ asset('img/logo.png') }}" alt=""></a>
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="footer_sm_tw" >
-                    <img src="{{ asset('img/twitter.svg') }}" alt="">
-                </div>
-                <div class="footer_sm_in">
-                    <img src="{{ asset('img/youtube.svg') }}" alt="">
-                </div>
-                <div class="footer_sm_yu">
-                    <img src="{{ asset('img/linkedin.svg') }}" alt="">
-                </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 footer_sm d-flex justify-content-end">
+                    <img class="tw" src="{{ asset('img/twitter.svg') }}" alt="" >
+                    <img class="in" src="{{ asset('img/youtube.svg') }}" alt="">
+                    <img class="yu" src="{{ asset('img/linkedin.svg') }}" alt="">
             </div>
         </div>
 
         <div class="row">
             <div class="col-12">
-                <nav class="navbar navbar-light bg-light">
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <nav class="navbar navbar-light">
+                    <form class="form-inline footer_form">
+                        <input class="form-control mr-sm-2" type="search" placeholder="{{ ('front.search') }}" aria-label="Search">
+                        <button class="btn my-2 my-sm-0" type="submit">{{ ('front.search') }}</button>
                     </form>
                 </nav>
             </div>
         </div>
 
-{{--        <div class="row">--}}
-{{--            <div class="col-12">--}}
-{{--                <div class="container">--}}
-{{--                    <nav class="navbar navbar-expand-lg navbar-light bg-light">--}}
-{{--                        <a class="navbar-brand" href="#">Navbar</a>--}}
-{{--                    </nav>--}}
-{{--                    <nav class="navbar navbar-expand-lg navbar-light bg-light">--}}
-{{--                        <a class="navbar-brand" href="#">Navbar</a>--}}
-{{--                    </nav>--}}
-{{--                    <nav class="navbar navbar-expand-lg navbar-light bg-light">--}}
-{{--                        <a class="navbar-brand" href="#">Navbar</a>--}}
-{{--                    </nav>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
         <div class="row pt-2 pb-2">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 footer_menu_1_6">
-                <ul class="nav">
+                <ul class="footer_doc">
                     <li class="nav-item footer_menu_item">
-                        <a class="nav-link footer_menu_link" href="#">Accebility</a>
+                        <a class="nav-link footer_menu_link" href="#">{{ ('front.accessibility') }}</a>
                     </li>
                     <li class="nav-item footer_menu_item">
-                        <a class="nav-link footer_menu_link" href="#">Privacy policy</a>
+                        <a class="nav-link footer_menu_link" href="#">{{ ('front.privacy_policy') }}</a>
                     </li>
                     <li class="nav-item footer_menu_item">
-                        <a class="nav-link footer_menu_link" href="#">Our policies</a>
+                        <a class="nav-link footer_menu_link" href="#">{{ ('front.our_policies') }}</a>
                     </li>
                     <li class="nav-item footer_menu_item">
-                        <a class="nav-link footer_menu_link" href="#">Our policies</a>
+                        <a class="nav-link footer_menu_link" href="#">{{ ('front.terms_of_use') }}</a>
                     </li>
                 </ul>
             </div>
