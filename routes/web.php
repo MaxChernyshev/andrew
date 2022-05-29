@@ -27,9 +27,10 @@ Route::localizedGroup(function ()
 
     Route::get('/faq', [FrontSubject::class, 'index'])->name('faq');
 
-    Route::get('/faq/{subject:slug}', [FrontSubject::class, 'show'])->name('faq.question');
+    Route::get('/faq/{subject:slug}', [FrontSubject::class, 'show'])->name('faq.show.subject');
 
-    Route::get('/faq/{subject:slug}/{question:slug}', [FrontQuestion::class, 'show'])->name('faq.answer');
+//    Route::get('/faq/{subject:slug}', [FrontQuestion::class, 'show'])->name('faq.show.subject');
+//    Route::get('/faq/{subject:slug}/{question:slug}', [FrontQuestion::class, 'show'])->name('faq.show');
 
 
 //    Route::prefix('/contact')->name('contact.')->group(function ()

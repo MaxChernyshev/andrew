@@ -24,7 +24,7 @@
                         <a class="nav-link header_menu_link" href="{{ route('faq') }}">FAQ</a>
                     </li>
                     <li class="nav-item header_menu_item">
-                        <a class="nav-link header_menu_link" href="https://lifeworks.com/en">{{ ('front.our_website') }}</a>
+                        <a class="nav-link header_menu_link" href="https://lifeworks.com/en">{{ __('front.our_website') }}</a>
                     </li>
                 </ul>
             </div>

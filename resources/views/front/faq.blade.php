@@ -14,11 +14,21 @@
                                     </button>
                                 </h2>
                             </div>
+
                             <div id="collapse{{$subject->id}}" class="collapse" aria-labelledby="heading{{$subject->id}}" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    {!! $subject->content !!}
+                                <div class="row">
+                                    <div class="card-body col-10">
+                                        {!! $subject->content !!}
+                                    </div>
+                                    <div class="card-body col-2">
+                                        <a href="{{ route('faq.show.subject', ['subject' => $subject]) }}">
+                                            learn more
+                                        </a>
+                                    </div>
                                 </div>
+
                             </div>
+
                         </div>
                     @endforeach
                 </div>

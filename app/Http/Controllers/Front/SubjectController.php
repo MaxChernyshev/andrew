@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Question;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 
@@ -17,10 +18,11 @@ class SubjectController extends Controller
         return view('front.faq', compact('subjects'));
     }
 
-    public function show(Subject $subject, $slug)
+    public function show(Subject $subject)
     {
         $subject = $subject->with('questions.translations', 'translations', 'questions')->first();
-
-        return view('front.themes.show', compact('subject'));
+        $questions = Question::where('subject_id', $subject->id)->get();
+//        dd($subject);
+        return view('front.show-question', compact('subject', 'questions'));
     }
 }
