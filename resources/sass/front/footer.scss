@@ -28,9 +28,9 @@ footer {
                 transform: scaleX(1);
             }
 
-            .footer_menu_link:hover {
-                color: black;
-            }
+            //.footer_menu_link:hover {
+            //    color: black;
+            //}
         }
 
         .footer_year {
@@ -45,7 +45,7 @@ footer {
         .footer_lang {
             border: 1px solid black;
             padding: .2rem .8rem;
-            border-radius: 25%;
+            border-radius: 1.67rem;
             line-height: 1;
             width: 6rem;
 
@@ -54,13 +54,13 @@ footer {
             }
         }
 
-        .footer_lang:hover {
-            background-color: black;
-
-            a {
-                color: white;
-            }
-        }
+        //.footer_lang:hover {
+        //    background-color: black;
+        //
+        //    a {
+        //        color: white;
+        //    }
+        //}
         .footer_doc{
             display: flex;
             /* flex-wrap: wrap; */
@@ -73,11 +73,11 @@ footer {
                 color: black;
                 border-color: black;
             }
-            button:hover{
-                color: white;
-                border-color: black;
-                background-color: black;
-            }
+            //button:hover{
+            //    color: white;
+            //    border-color: black;
+            //    background-color: black;
+            //}
         }
     }
 }
