@@ -46,7 +46,7 @@ class generateAdmin extends Command
         $usersSeed->run();
 
         $adminRoleId = Role::where('role', 'admin')->first();
-        $password = 'password';
+        $password = 'A0OQ#@Sd}';
         $user = User::updateOrCreate(
             [
                 'email' => 'admin@mail.com',
