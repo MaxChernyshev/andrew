@@ -11,7 +11,6 @@ class QuestionController extends Controller
 {
     public function show(Question $question, $slug)
     {
-        dd(123);
         $question = $question->with('questions.translations', 'translations', 'questions')->first();
 
         return view('front.themes.show', compact('question'));

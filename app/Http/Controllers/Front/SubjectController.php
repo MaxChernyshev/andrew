@@ -20,9 +20,10 @@ class SubjectController extends Controller
 
     public function show(Subject $subject)
     {
-        $subject = $subject->with('questions.translations', 'translations', 'questions')->first();
+        $subject = $subject->with('questions.translations', 'translations', 'questions')->where('id', $subject->id)->first();
+
         $questions = Question::where('subject_id', $subject->id)->get();
-//        dd($subject);
+
         return view('front.show-question', compact('subject', 'questions'));
     }
 }
