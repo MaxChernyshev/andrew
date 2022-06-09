@@ -20,7 +20,8 @@ class SubjectRequest extends FormRequest
             'title' => ['string', 'max:191'],
             'content' => ['string', 'nullable'],
         ]), [
-            'image' => ['file', 'image', 'mimes:png,jpeg', 'max:4096'],
+            'image' => ['file', 'max:4096'],
+//            'image' => ['file', 'image', 'mimes:png,jpeg', 'max:4096'],
         ]);
         return $rules;
     }
