@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Front\SubjectController as FrontSubject;
 use App\Http\Controllers\Front\QuestionController as FrontQuestion;
 use App\Http\Controllers\Front\SearchController;
+use App\Http\Controllers\Front\ContactFormController;
 
 
 Route::get('/dashboard', function ()
@@ -31,6 +32,8 @@ Route::localizedGroup(function ()
     Route::get('/faq/{subject:slug}', [FrontSubject::class, 'show'])->name('faq.show.subject');
 
     Route::get('/search', [SearchController::class, 'index'])->name('search');
+
+    Route::get('/contact', [ContactFormController::class, 'index'])->name('contact.form');
 
 //    Route::get('/faq/{subject:slug}', [FrontQuestion::class, 'show'])->name('faq.show.subject');
 //    Route::get('/faq/{subject:slug}/{question:slug}', [FrontQuestion::class, 'show'])->name('faq.show');

@@ -20,5 +20,6 @@ return [
     'enter_name' => 'enter your name',
     'enter_email' => 'enter your email',
     'enter_phone' => 'enter your phone',
-    'enter_message' => 'enter your message'
+    'enter_message' => 'enter your message',
+    'send_message' => 'Send message',
 ];

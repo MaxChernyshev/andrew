@@ -25,7 +25,7 @@
             <div class="col-12">
                 <nav class="navbar navbar-light">
                     <form class="form-inline footer_form" method="GET" action="{{ route('search') }}" enctype="multipart/form-data">
-                        <input type="text" name="search" class="form-control" id="search" placeholder="Search">
+                        <input type="text" name="search" class="form-control" id="search" placeholder="{{ __('front.search') }}">
                         <button class="btn my-2 my-sm-0" type="submit">{{ __('front.search') }}</button>
                     </form>
                 </nav>
@@ -49,6 +49,10 @@
                     </li>
                 </ul>
             </div>
+
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
 
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 footer_menu_2_6">
                 <div class="d-flex justify-content-end">

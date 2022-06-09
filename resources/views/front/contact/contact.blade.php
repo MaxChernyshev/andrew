@@ -2,11 +2,12 @@
 
 @section('content')
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5" id="contact">
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('contact.store') }}" method="POST" multiple="">
-{{--                <form action="" method="POST" multiple="">--}}
+                <form action="#" method="POST" multiple="">
+                    {{--                <form action="{{ route('contact.store') }}" method="POST" multiple="">--}}
+
                     @csrf
                     @method('POST')
                     <div class="form-group">
@@ -48,19 +49,7 @@
                             </div>
                         @endif
                     </div>
-{{--                    <div class="form-group mt-4 mb-4">--}}
-{{--                        <div class="captcha">--}}
-{{--                            <span>{!! captcha_img() !!}</span>--}}
-{{--                            <a class="btn btn-danger reload" onClick="history.go(0);">↻</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="form-group mb-4">--}}
-{{--                        <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">--}}
-{{--                    </div>--}}
-
-                    <!-- TODO display Captha errors-->
-
-                    <button type="submit" class="btn btn-primary mb-2">Send message</button>
+                    <button type="submit" class="btn btn-sm mb-2">@lang('contact.send_message')</button>
                 </form>
             </div>
         </div>
