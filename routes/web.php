@@ -10,6 +10,7 @@ use App\Http\Livewire\Admin\Questions;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Front\SubjectController as FrontSubject;
 use App\Http\Controllers\Front\QuestionController as FrontQuestion;
+use App\Http\Controllers\Front\SearchController;
 
 
 Route::get('/dashboard', function ()
@@ -28,6 +29,8 @@ Route::localizedGroup(function ()
     Route::get('/faq', [FrontSubject::class, 'index'])->name('faq');
 
     Route::get('/faq/{subject:slug}', [FrontSubject::class, 'show'])->name('faq.show.subject');
+
+    Route::get('/search', [SearchController::class, 'index'])->name('search');
 
 //    Route::get('/faq/{subject:slug}', [FrontQuestion::class, 'show'])->name('faq.show.subject');
 //    Route::get('/faq/{subject:slug}/{question:slug}', [FrontQuestion::class, 'show'])->name('faq.show');

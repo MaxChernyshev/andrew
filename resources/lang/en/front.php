@@ -1,6 +1,6 @@
 <?php
 
-return[
+return [
     'failed' => 'These credentials do not match our records',
     'password' => 'The provided is incorrect',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
@@ -15,5 +15,8 @@ return[
     'go_to_questions' => 'go to questions',
     'visit_our_website' => 'visit our corporate website',
     'hello' => 'Hello!',
-
+    'subject_search_result' => 'Search result in Subjects',
+    'no_subject_search_result' => 'No search result in Subjects',
+    'question_search_result' => 'Search result in Questions',
+    'no_question_search_result' => 'No search result in Questions',
 ];

@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="logo_block">
-                    <a href="{{ asset('/') }}"><img id="logotipe" src="{{ asset('img/logo.png') }}" alt=""></a>
+                    <a href="{{ asset('/') }}"><img id="logotype" src="{{ asset('img/logo.png') }}" alt=""></a>
                 </div>
 
             </div>
@@ -29,5 +29,17 @@
                 </ul>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-light">
+                    <form class="form-inline footer_form" method="GET" action="{{ route('search') }}" enctype="multipart/form-data">
+                        <input type="text" name="search" class="form-control" id="search" placeholder="Search">
+                        <button class="btn my-2 my-sm-0" type="submit">{{ __('front.search') }}</button>
+                    </form>
+                </nav>
+            </div>
+        </div>
+
     </div>
 </header>

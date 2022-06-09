@@ -2,7 +2,6 @@
 
 @section('content')
 
-
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-10">
@@ -12,21 +11,21 @@
                 </div>
             </div>
         </div>
-<div class="row">
-    @foreach($questions as $question)
-    <div class="col-10">
-        <h3 class="m-3 text-uppercase">{{ $question->title }}</h3>
-        <div class="m-5">
-            {!! $question->content !!}
+        <div class="row">
+            @foreach($questions as $question)
+                <div class="col-10">
+                    <h3 class="m-3 text-uppercase">{{ $question->title }}</h3>
+                    <div class="m-5">
+                        {!! $question->content !!}
+                    </div>
+                    <div class="m-5">
+                        {!! $question->answer !!}
+                    </div>
+                </div>
+            @endforeach
         </div>
-        <div class="m-5">
-            {!! $question->answer !!}
-        </div>
-    </div>
-    @endforeach
-</div>
-{{--        @foreach($questions as $item)--}}
-{{--            @dump($item->title)--}}
-{{--        @endforeach--}}
+        {{--        @foreach($questions as $item)--}}
+        {{--            @dump($item->title)--}}
+        {{--        @endforeach--}}
     </div>
 @endsection

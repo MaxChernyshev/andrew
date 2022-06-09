@@ -1,24 +1,31 @@
 <footer class="bottom" id="footer">
-{{--<footer class="fixed-bottom" id="footer">--}}
+    {{--<footer class="fixed-bottom" id="footer">--}}
     <div class="container">
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="footer_logo">
-                    <a href="{{ asset('/') }}"><img id="logotipe" src="{{ asset('img/logo.png') }}" alt=""></a>
+                    <a href="{{ asset('/') }}"><img id="logotype" src="{{ asset('img/logo.png') }}" alt=""></a>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 footer_sm d-flex justify-content-end">
-                    <img class="tw" src="{{ asset('img/twitter.svg') }}" alt="" >
-                    <img class="in" src="{{ asset('img/youtube.svg') }}" alt="">
-                    <img class="yu" src="{{ asset('img/linkedin.svg') }}" alt="">
+                <a href="https://twitter.com/LifeWorks" target="_blank">
+                    <img class="tw p-2 m-2" src="{{ asset('img/twitter.svg') }}" alt="LifeWorks twitter">
+                </a>
+                <a href="https://www.youtube.com/c/LifeWorksInc" target="_blank">
+                    <img class="tw p-2 m-2" src="{{ asset('img/youtube.svg') }}" alt="LifeWorks youtube">
+                </a>
+                <a href="https://ca.linkedin.com/company/lifeworks" target="_blank">
+                    <img class="tw p-2 m-2" src="{{ asset('img/linkedin.svg') }}" alt="LifeWorks linkedin">
+                </a>
             </div>
+
         </div>
 
         <div class="row">
             <div class="col-12">
                 <nav class="navbar navbar-light">
-                    <form class="form-inline footer_form">
-                        <input class="form-control mr-sm-2" type="search" placeholder="{{ __('front.search') }}" aria-label="Search">
+                    <form class="form-inline footer_form" method="GET" action="{{ route('search') }}" enctype="multipart/form-data">
+                        <input type="text" name="search" class="form-control" id="search" placeholder="Search">
                         <button class="btn my-2 my-sm-0" type="submit">{{ __('front.search') }}</button>
                     </form>
                 </nav>

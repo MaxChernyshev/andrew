@@ -15,5 +15,8 @@ return [
     'go_to_questions' => 'passer aux questions',
     'visit_our_website' => 'visitez notre site Web corporatif',
     'hello' => 'Bonjour!',
-
+    'subject_search_result' => 'Résultat de la recherche dans Sujets',
+    'no_subject_search_result' => 'Aucun résultat de recherche dans Sujets',
+    'question_search_result' => 'Résultat de la recherche dans Questions',
+    'no_question_search_result' => 'Aucun résultat de recherche dans Questions',
 ];
