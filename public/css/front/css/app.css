@@ -10028,6 +10028,10 @@ header#header {
 header#header .logo_block {
   width: 13.8rem;
 }
+header#header button {
+  color: black;
+  border-color: black;
+}
 header#header .header_menu_item {
   padding: 0.8rem 1.6rem;
 }
@@ -10110,4 +10114,14 @@ footer#footer .footer_doc {
 footer#footer .footer_form button {
   color: black;
   border-color: black;
+}
+
+#contact button {
+  color: black;
+  border-color: black;
+  background-color: white;
+}
+#contact .form-control {
+  border-color: black;
+  background-color: white;
 }

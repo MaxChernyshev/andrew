@@ -11,6 +11,7 @@ return [
     'our_policies' => 'Our policies',
     'terms_of_use' => 'Terms of use',
     'our_website' => 'Our website',
+    'contact_us' => 'Contact us',
     'home_page' => 'you are on the site of frequently asked questions for employees of the company ',
     'go_to_questions' => 'go to questions',
     'visit_our_website' => 'visit our corporate website',
