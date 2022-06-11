@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Question extends Model  implements TranslatableContract
+class Question extends Model implements TranslatableContract
 {
     use HasFactory;
     use Translatable;
@@ -42,8 +42,14 @@ class Question extends Model  implements TranslatableContract
         'image',
     ];
 
-    public function subject(){
+    public function subject()
+    {
         return $this->belongsTo(Subject::class);
+    }
+
+    public function files()
+    {
+        return $this->morphMany(File::class, 'fileable');
     }
 
 }

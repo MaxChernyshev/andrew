@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SubjectRequest;
+use App\Models\File;
 use App\Models\Subject as SubjectModel;
+use App\Services\UploadFileService;
 use App\Services\UploadImageService;
 use Illuminate\Http\Request;
 
@@ -26,6 +28,20 @@ class SubjectController extends Controller
         $tableName = (new SubjectModel)->getTable();
 
         $validated['image'] = $imageService->uploadImage($request->image, $tableName);
+
+        $fileService = new UploadFileService();
+
+        $tableNameForFile = (new File())->getTable();
+
+        $filename = $validated['file']->getClientOriginalName();
+
+        $validated = array_merge(['file' => $filename], $validated);
+
+//        dd($validated['file']);
+
+        $validated['file'] = $fileService->uploadFile($validated['file'], $tableNameForFile);
+
+        dd($validated['file']);
 
         SubjectModel::create($validated);
 

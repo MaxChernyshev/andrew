@@ -1,8 +1,11 @@
-@extends('errors::minimal')
+@extends('front.layouts.layout')
 
-@section('title', __('Not Found'))
-@section('code', '404')
-<div>
-    <a href="{{ route('main.page') }}">Main Page</a>
-</div>
-@section('message', __('Not Found'))
+@section('content')
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <img src="{{ asset('img/404-alt.png') }}" alt="404" class="mx-auto">
+            </div>
+        </div>
+    </div>
+@endsection

@@ -60,6 +60,10 @@
                                     @livewire('admin.image-loader')
                                     <!-- END Image -->
 
+                                    <!-- File -->
+                                    @livewire('admin.file-loader')
+                                    <!-- END File -->
+
                                     <!-- Submit -->
                                     <div class="form-group col-12">
                                         <button class="btn btn-sm btn-primary" type="submit">Save</button>
