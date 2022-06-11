@@ -6,67 +6,46 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 
 
-class UploadImageService
+class UploadFileService
 {
-    public function uploadImage($file, $folder, $image = NULL)
+
+    /**
+     * Display a listing of variables.
+     *
+     * @return $path file path
+     */
+    public function uploadFile($doc, $folder, $file = NULL)
     {
-        $name = null;
-        if ($file) {
-            if ($image) {
-                Storage::delete($image);
+        $path = null;
+        if ($doc) {
+            if ($file) {
+                Storage::delete($file);
             }
-            $name = '/storage/' . $file->store("/$folder", 'public');
+            $path = '/storage/' . $doc->store("/$folder", 'public');
         }
-        return $name;
+        return $path;
     }
 
-    public function uploadProfileImage($file, $user)
+    public function updateFile($doc, $folder, $file = NULL)
     {
-        $name = null;
-
-        if ($file) {
-            if ($user->photo) {
-                $img = $user->photo;
-                $img = str_replace('/storage/', '', $img);
-                Storage::disk('profile_photos')->delete($img);
-            }
-            $name = Storage::disk('profile_photos')->url($file->store('photos/profile/'.$user->id, 'profile_photos'));
-        }
-        return $name;
-    }
-
-    public function deleteProfileImage($user)
-    {
-        if ($user->photo) {
-            $img = $user->photo;
-            $img = str_replace('/storage/', '', $img);
-            return Storage::disk('profile_photos')->delete($img);
-        } else {
-            return false;
-        }
-    }
-
-
-    public function updateImage($file, $folder, $image = NULL)
-    {
-        if ($image) {
-            $image = '/public' . substr($image, strlen('/storage'));
-            Storage::delete($image);
+        if ($doc) {
+            $file = '/public' . substr($file, strlen('/storage'));
+            Storage::delete($file);
         }
 
         return '/storage/' . $file->store("/$folder", 'public');
     }
 
-    public function deleteImage($image)
+    public function deleteFile($file)
     {
-        if (is_array($image) or $image instanceof Collection) {
-            foreach ($image as $media) {
-                $oldImagePath = '/public' . substr($media->link, strlen('/storage'));
-                Storage::delete($oldImagePath);
+        if (is_array($file) or $file instanceof Collection) {
+            foreach ($file as $item) {
+                $oldFilePath = '/public' . substr($item->link, strlen('/storage'));
+                Storage::delete($oldFilePath);
             }
-        } elseif ($image) {
-            $image = '/public' . substr($image, strlen('/storage'));
-            Storage::delete($image);
+        } elseif ($file) {
+            $doc = '/public' . substr($file, strlen('/storage'));
+            Storage::delete($doc);
         }
     }
 }

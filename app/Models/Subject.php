@@ -50,4 +50,9 @@ class Subject extends Model implements TranslatableContract
     {
         return $query->where('active', true);
     }
+
+    public function files()
+    {
+        return $this->morphMany(File::class, 'fileable');
+    }
 }
